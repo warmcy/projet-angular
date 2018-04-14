@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MeteoComponent } from './meteo/meteo.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MeteoComponent
   ],
   imports: [
     BrowserModule
