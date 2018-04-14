@@ -1,3 +1,15 @@
-<p>
-  meteo works!
-</p>
+<mat-card class="example-card">
+<mat-card-header>
+  <div mat-card-avatar class="example-header-image"></div>
+  <mat-card-title><h1>{{ town.name | uppercase }}</h1></mat-card-title>
+</mat-card-header>
+<mat-card-content>
+  <div>
+    <b>
+      Temperature :
+    </b>
+    {{ town.temperature }}
+  </div>
+  <div class="wi wi-forecast-io-{{ town.icon }} weather-logo"></div>
+</mat-card-content>
+</mat-card>
