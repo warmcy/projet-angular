@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../weather.service';
 import { Town } from '../town';
 
 @Component({
   selector: 'app-meteo',
   templateUrl: './meteo.component.html',
-  styleUrls: ['./meteo.component.css']
+  styleUrls: ['./meteo.component.css'],
+  providers: [WeatherService]
 })
 export class MeteoComponent implements OnInit {
   
-  town: Town = {id: 1, name: 'Belfort', temperature: 10, icon: "sun"};
+  town: Town = new Town()
   
-  constructor() { }
+  constructor(private WeatherService: WeatherService) { }
 
   ngOnInit() {
+    this.WeatherService.getTownById(1).subscribe(town => this.town = town);
   }
 
 }
