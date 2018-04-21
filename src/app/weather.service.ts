@@ -6,34 +6,14 @@ import { Town } from './town';
 
 @Injectable()
 export class WeatherService {
-  setLatLng$: Observable<any>;
-  private _coordsTrigger = new Subject<any>();
-  private _locationTrigger = new Subject<any>();
-  private lat;
-  private lng;
   
- readonly URL = "https://projet-harbane.herokuapp.com/towns";
+ readonly URL = "http://lpa2sgadot.herokuapp.com/towns";
   
   constructor(private http: HttpClient) { 
-    this.setLatLng$ = this._coordsTrigger.asObservable();
   }
 
-  currentForecast(): Observable<any> {
-    return this.http.get(this.URL + this.lat.toString() + "," + this.lng.toString());
-  }
-  
-  setLatLng(data) {
-      this.lat = data[0];
-      this.lng = data[1];
-      this._coordsTrigger.next(data);
-  }
-  
-  newForecastRequest() {
-    this._locationTrigger.next();
-  }
-
-  get locationsTrigger$() {
-    return this._locationTrigger.asObservable();
+  getTowns(): Observable<Town> {
+    return this.http.get(this.URL + '.json');
   }
   
   public getTownById(id: number): Observable<Town> {
