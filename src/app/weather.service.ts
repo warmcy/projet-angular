@@ -12,7 +12,7 @@ export class WeatherService {
   private lat;
   private lng;
   
-  readonly ROOT_URL = "https://projet-harbane.herokuapp.com/https://api.darksky.net/forecast/9dd5cfea95cc580c3d6d1bd573594d73";
+  readonly ROOT_URL = "https://projet-harbane.herokuapp.com/https://api.darksky.net/forecast/9dd5cfea95cc580c3d6d1bd573594d73/37.8267,-122.4233";
   readonly JSON_URL = "https://projet-harbane.herokuapp.com/towns";
   
   constructor(private http: HttpClient) { 
