@@ -24,10 +24,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    AgmCoreModule.forRoot({
-      apiKey: "569ef5a5a8f7537807ee78c80cd0d2dcfe9547b0",
-      libraries: ["GITHUB_TOKEN"]
-    }),
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
