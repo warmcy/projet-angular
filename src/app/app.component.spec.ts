@@ -18,7 +18,6 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         MeteoComponent,
-        LocationComponent,
         LocalForecastComponent
       ],
       imports: [
