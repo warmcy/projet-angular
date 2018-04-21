@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { Town } from './town';
 
 @Injectable()
 export class WeatherService {
@@ -11,14 +12,15 @@ export class WeatherService {
   private lat;
   private lng;
   
-  readonly ROOT_URL = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/31fb9ed2fc5a7c2766847cefdcca8570/";
+  readonly ROOT_URL = "https://projet-harbane.herokuapp.com/https://api.darksky.net/forecast/9dd5cfea95cc580c3d6d1bd573594d73";
+  readonly JSON_URL = "https://projet-harbane.herokuapp.com/towns";
   
   constructor(private http: HttpClient) { 
     this.setLatLng$ = this._coordsTrigger.asObservable();
   }
 
   currentForecast(): Observable<any> {
-    return this.http.get(this.ROOT_URL+this.lat.toString()+","+this.lng.toString());
+    return this.http.get(this.ROOT_URL + this.lat.toString() + "," + this.lng.toString());
   }
   
   setLatLng(data) {
@@ -28,12 +30,15 @@ export class WeatherService {
   }
   
   newForecastRequest() {
-    /// Create a new location trigger
     this._locationTrigger.next();
   }
 
   get locationsTrigger$() {
     return this._locationTrigger.asObservable();
+  }
+  
+  public getTownById(id: number): Observable<Town> {
+    return this.http.get<Town>(this.JSON_URL + id + ".json");
   }
 
 }
