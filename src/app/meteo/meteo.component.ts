@@ -8,7 +8,7 @@ import { Town } from '../town';
 })
 export class MeteoComponent implements OnInit {
   
-  town: Town = {id: 1, name: 'VALLATOWN', temperature: 1000, icon: "sun"};
+  town: Town = {id: 1, name: 'Belfort', temperature: 10, icon: "sun"};
   
   constructor() { }
 

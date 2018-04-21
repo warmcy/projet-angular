@@ -25,8 +25,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
-      apiKey: "71d9f2a587be7cb0da909d6e5fb71f1ccda48d24",
-      libraries: ["places"]
+      apiKey: "569ef5a5a8f7537807ee78c80cd0d2dcfe9547b0",
+      libraries: ["GITHUB_TOKEN"]
     }),
     FormsModule,
     BrowserAnimationsModule,
