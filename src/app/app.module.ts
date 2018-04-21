@@ -18,6 +18,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     MeteoComponent,
+    LocationComponent,
     LocalForecastComponent
   ],
   imports: [

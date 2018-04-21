@@ -12,7 +12,7 @@ export class WeatherService {
   private lat;
   private lng;
   
- readonly URL = "https://projet-harbane.herokuapp.com/towns/";
+ readonly URL = "https://projet-harbane.herokuapp.com/towns";
   
   constructor(private http: HttpClient) { 
     this.setLatLng$ = this._coordsTrigger.asObservable();
