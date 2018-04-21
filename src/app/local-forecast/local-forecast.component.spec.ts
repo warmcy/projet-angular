@@ -15,10 +15,6 @@ describe('LocalForecastComponent', () => {
       declarations: [ LocalForecastComponent ],
       imports: [
         BrowserModule,
-        AgmCoreModule.forRoot({
-          apiKey: "AIzaSyCo9k2z8br56H8foQ10J-CWQI9guxs60lQ",
-          libraries: ["places"]
-        }),
         FormsModule, 
         ReactiveFormsModule,
         HttpClientModule
