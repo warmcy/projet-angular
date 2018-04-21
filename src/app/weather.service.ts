@@ -12,15 +12,14 @@ export class WeatherService {
   private lat;
   private lng;
   
-  readonly ROOT_URL = "https://projet-harbane.herokuapp.com/https://api.darksky.net/forecast/9dd5cfea95cc580c3d6d1bd573594d73/37.8267,-122.4233";
-  readonly JSON_URL = "https://projet-harbane.herokuapp.com/https://projet-harbane.herokuapp.com/towns/1.json";
+ readonly URL = "https://projet-harbane.herokuapp.com/towns/";
   
   constructor(private http: HttpClient) { 
     this.setLatLng$ = this._coordsTrigger.asObservable();
   }
 
   currentForecast(): Observable<any> {
-    return this.http.get(this.ROOT_URL + this.lat.toString() + "," + this.lng.toString());
+    return this.http.get(this.URL + this.lat.toString() + "," + this.lng.toString());
   }
   
   setLatLng(data) {
@@ -38,7 +37,7 @@ export class WeatherService {
   }
   
   public getTownById(id: number): Observable<Town> {
-    return this.http.get<Town>(this.JSON_URL + id + ".json");
+    return this.http.get<Town>(this.URL + id + ".json");
   }
 
 }

@@ -11,7 +11,6 @@ import {MatButtonModule} from '@angular/material/button';
 import { WeatherService } from './weather.service';
 import { AppComponent } from './app.component';
 import { MeteoComponent } from './meteo/meteo.component';
-import { LocationComponent } from './location/location.component';
 enableProdMode();
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -19,7 +18,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     MeteoComponent,
-    LocationComponent,
     LocalForecastComponent
   ],
   imports: [
