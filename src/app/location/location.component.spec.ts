@@ -19,6 +19,10 @@ describe('LocationComponent', () => {
       declarations: [ LocationComponent ],
       imports: [
         BrowserModule,
+        AgmCoreModule.forRoot({
+          apiKey: "0b43adbcd28099914575a2968df9b6e589d53ed5",
+          libraries: ["places"]
+        }),
         FormsModule, 
         ReactiveFormsModule,
         HttpClientModule
