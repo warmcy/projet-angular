@@ -10,7 +10,7 @@ import { Town } from '../town';
 })
 export class MeteoComponent implements OnInit {
   
-  town: Town = new Town()
+  town = new Town()
   
   constructor(private WeatherService: WeatherService) { }
 

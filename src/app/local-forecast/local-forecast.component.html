@@ -1,9 +1,3 @@
-<h1>
-  <i class="wi wi-barometer"></i> Weather Forecast
-</h1>
-
-<h1>Seven Day Forecast</h1>
-
 <div *ngIf="forecast | async as f" class="columns">
     <div *ngFor="let day of f.daily.data" class="column">
 
